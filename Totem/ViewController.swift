@@ -16,12 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var myCurrentMoodImageView: UIImageView!
     @IBOutlet weak var myCurrentMoodLabel: UILabel!
 
-    let possibleStatus = ["Conceptual Deep Work",
-                          "Work Through Others",
-                          "Tangible Deep Work",
-                          "Getting Stuff Done",
-                          "PAUSE",
-                          "START"]
+    let possibleStatus = ["pause",
+                          "stop",
+                          "conceptual deep work",
+                          "tangible deep work",
+                          "getting shit done",
+                          "inspiration mode"]
 
     var databaseRef: DatabaseReference!
     var refHandle: UInt = 0
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 if self.statusModeIndex != modeIndex {
                     self.statusModeIndex = modeIndex
 
-                    DispatchQueue.main.async { [weak self] in
+                    DispatchQueue.main.async() { [weak self] in
                         self!.setupMyMood(withProfileStatus: ProfileStatus(rawValue: self!.possibleStatus[modeIndex])!)
                     }
                 }
