@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
 
     private func fetchMyMood() {
-        setupMyMood(withProfileStatus: ProfileStatus(rawValue: "HAPPY")!)
+        setupMyMood(withProfileStatus: ProfileStatus(rawValue: "Conceptual Deep Work")!)
     }
 
     private func setupMyMood(withProfileStatus profileStatus: ProfileStatus) {

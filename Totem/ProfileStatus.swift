@@ -11,10 +11,10 @@ import UIKit
 
 enum ProfileStatus: String {
 
-    case status1 = "HAPPY"
-    case status2 = "BUSY"
-    case status3 = "LOW"
-    case status4 = "HIGH"
+    case status1 = "Conceptual Deep Work"
+    case status2 = "Work Through Others"
+    case status3 = "Tangible Deep Work"
+    case status4 = "Getting Stuff Done"
     case status5 = "PAUSE"
     case status6 = "START"
 
@@ -38,9 +38,9 @@ enum ProfileStatus: String {
         }
     }
 
-    static func giveMeARandomStatusImage() -> ProfileStatus {
+    static func randomStatusImage() -> ProfileStatus {
 
-        let possibleStatus = ["HAPPY", "BUSY", "LOW", "HIGH", "PAUSE", "START"]
+        let possibleStatus = ["Conceptual Deep Work", "Work Through Others", "Tangible Deep Work", "Getting Stuff Done", "PAUSE", "START"]
         let randomIndex = Int(arc4random_uniform(UInt32(possibleStatus.count)))
         let statusValue = possibleStatus[randomIndex]
 
