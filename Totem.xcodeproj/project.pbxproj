@@ -14,6 +14,7 @@
 		B9A705491F064E0E002D7B65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A705471F064E0E002D7B65 /* LaunchScreen.storyboard */; };
 		B9A705541F064E0E002D7B65 /* TotemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A705531F064E0E002D7B65 /* TotemTests.swift */; };
 		B9A7055F1F06598E002D7B65 /* ProfileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */; };
+		B9A705631F066BE5002D7B65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9A705621F066BE5002D7B65 /* GoogleService-Info.plist */; };
 		EC26235C6D59EFB613F7E462 /* libPods-Totem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6CEBA1DEAF6FC364FEC61C /* libPods-Totem.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		B9A705531F064E0E002D7B65 /* TotemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotemTests.swift; sourceTree = "<group>"; };
 		B9A705551F064E0E002D7B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStatus.swift; sourceTree = "<group>"; };
+		B9A705621F066BE5002D7B65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E00178F33D0AEE1EAAD588FC /* Pods-Totem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Totem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Totem/Pods-Totem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				B9A705451F064E0E002D7B65 /* Assets.xcassets */,
 				B9A705471F064E0E002D7B65 /* LaunchScreen.storyboard */,
 				B9A7054A1F064E0E002D7B65 /* Info.plist */,
+				B9A705621F066BE5002D7B65 /* GoogleService-Info.plist */,
 			);
 			path = Totem;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9A705491F064E0E002D7B65 /* LaunchScreen.storyboard in Resources */,
+				B9A705631F066BE5002D7B65 /* GoogleService-Info.plist in Resources */,
 				B9A705461F064E0E002D7B65 /* Assets.xcassets in Resources */,
 				B9A705441F064E0E002D7B65 /* Main.storyboard in Resources */,
 			);
