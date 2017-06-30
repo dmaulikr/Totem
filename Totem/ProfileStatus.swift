@@ -39,13 +39,13 @@ enum ProfileStatus: String {
     }
 
     static func randomStatusImage() -> ProfileStatus {
-
         let possibleStatus = ["stop",
                               "pause",
                               "conceptual deep work",
                               "tangible deep work",
                               "getting shit done",
                               "inspiration mode"]
+
         let randomIndex = Int(arc4random_uniform(UInt32(possibleStatus.count)))
         let statusValue = possibleStatus[randomIndex]
 
