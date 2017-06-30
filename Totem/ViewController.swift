@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -15,10 +16,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var myCurrentMoodImageView: UIImageView!
     @IBOutlet weak var myCurrentMoodLabel: UILabel!
 
+    var databaseRef: DatabaseReference!
+    var refHandle: UInt = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupMyProfile()
+
+        databaseRef = Database.database().reference()
+
         fetchMyMood()
     }
 
@@ -31,6 +38,13 @@ class ViewController: UIViewController {
     }
 
     private func fetchMyMood() {
+        refHandle = databaseRef.observe(.value, with: { snapshot in
+            print(snapshot)
+            if snapshot.exists() {
+                print("*********** working ***********")
+            }
+        })
+
         setupMyMood(withProfileStatus: ProfileStatus(rawValue: "Conceptual Deep Work")!)
     }
 
@@ -38,5 +52,6 @@ class ViewController: UIViewController {
         myCurrentMoodImageView.image = profileStatus.statusImage()
         myCurrentMoodLabel.text = profileStatus.rawValue
     }
+
 }
 
