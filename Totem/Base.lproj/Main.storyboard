@@ -108,6 +108,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Totem Profile" id="saI-01-kf9"/>
                     <connections>
+                        <outlet property="modeImageView" destination="0Ct-Jf-bE6" id="Vkm-xv-Fva"/>
+                        <outlet property="modeLabel" destination="vGG-HW-Oav" id="EBp-Uy-Ihv"/>
                         <outlet property="myCurrentMoodImageView" destination="0Ct-Jf-bE6" id="wks-r1-EEp"/>
                         <outlet property="myCurrentMoodLabel" destination="vGG-HW-Oav" id="mWJ-VH-WyS"/>
                         <outlet property="profileImageView" destination="yk2-ZT-rc4" id="HuW-Lm-tl4"/>
@@ -252,6 +254,19 @@
                                             <action selector="sendData" destination="usU-be-Mt2" eventType="touchUpInside" id="rVn-we-aOQ"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="status1" translatesAutoresizingMaskIntoConstraints="NO" id="lET-zc-Bnk">
+                                        <rect key="frame" x="123" y="215" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="bEj-Oa-fdj"/>
+                                            <constraint firstAttribute="width" constant="128" id="r6v-XI-HD8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbH-sm-3PD">
+                                        <rect key="frame" x="164" y="359" width="46.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -263,6 +278,7 @@
                                     <constraint firstItem="qyF-Ul-1W7" firstAttribute="centerY" secondItem="AXh-6z-nwM" secondAttribute="centerY" id="AKG-kI-b5V"/>
                                     <constraint firstItem="9Tk-Nh-eKW" firstAttribute="leading" secondItem="JhH-gL-U4d" secondAttribute="trailing" constant="24" id="BAg-Hm-6k6"/>
                                     <constraint firstItem="pae-wR-LNt" firstAttribute="leading" secondItem="afb-1h-DCj" secondAttribute="trailing" constant="16" id="CDq-XI-cUw"/>
+                                    <constraint firstItem="lET-zc-Bnk" firstAttribute="top" secondItem="ga7-yA-xLj" secondAttribute="bottom" constant="44" id="CRV-Rt-AKU"/>
                                     <constraint firstItem="izd-TZ-H54" firstAttribute="leading" secondItem="ga7-yA-xLj" secondAttribute="trailing" constant="16" id="G6A-Te-8o1"/>
                                     <constraint firstItem="AXh-6z-nwM" firstAttribute="centerY" secondItem="pae-wR-LNt" secondAttribute="centerY" id="GJI-6x-lZH"/>
                                     <constraint firstItem="qyF-Ul-1W7" firstAttribute="leading" secondItem="AXh-6z-nwM" secondAttribute="trailing" constant="16" id="Ihc-cH-iC6"/>
@@ -271,7 +287,9 @@
                                     <constraint firstItem="82J-nh-fLa" firstAttribute="centerY" secondItem="9Tk-Nh-eKW" secondAttribute="centerY" id="LIN-2v-NLL"/>
                                     <constraint firstItem="pae-wR-LNt" firstAttribute="centerY" secondItem="afb-1h-DCj" secondAttribute="centerY" id="MBf-3b-m9a"/>
                                     <constraint firstItem="ABW-xI-Ru6" firstAttribute="leading" secondItem="IC9-lj-l7j" secondAttribute="leading" constant="16" id="MXN-V0-apm"/>
+                                    <constraint firstItem="GbH-sm-3PD" firstAttribute="centerX" secondItem="lET-zc-Bnk" secondAttribute="centerX" id="SYr-OG-HWP"/>
                                     <constraint firstItem="afb-1h-DCj" firstAttribute="leading" secondItem="bhQ-yW-boK" secondAttribute="trailing" constant="24" id="Tcj-Fq-lnD"/>
+                                    <constraint firstItem="GbH-sm-3PD" firstAttribute="top" secondItem="lET-zc-Bnk" secondAttribute="bottom" constant="16" id="UQr-2W-hX8"/>
                                     <constraint firstItem="sVT-QX-NWe" firstAttribute="centerX" secondItem="IC9-lj-l7j" secondAttribute="centerX" id="Ucs-Kg-9bc"/>
                                     <constraint firstItem="ABW-xI-Ru6" firstAttribute="top" secondItem="IC9-lj-l7j" secondAttribute="top" constant="16" id="V58-mf-MUM"/>
                                     <constraint firstItem="Gbo-zw-1px" firstAttribute="top" secondItem="bhQ-yW-boK" secondAttribute="bottom" constant="25" id="Vcg-Q2-Igu"/>
@@ -281,6 +299,7 @@
                                     <constraint firstItem="bhQ-yW-boK" firstAttribute="top" secondItem="ABW-xI-Ru6" secondAttribute="bottom" constant="14" id="hDc-YB-mJR"/>
                                     <constraint firstItem="ga7-yA-xLj" firstAttribute="leading" secondItem="82J-nh-fLa" secondAttribute="trailing" constant="16" id="iWH-Kp-6Qm"/>
                                     <constraint firstItem="bhQ-yW-boK" firstAttribute="leading" secondItem="ABW-xI-Ru6" secondAttribute="leading" id="pYi-Z1-Ox9"/>
+                                    <constraint firstItem="lET-zc-Bnk" firstAttribute="centerX" secondItem="IC9-lj-l7j" secondAttribute="centerX" id="qAA-tb-Dgt"/>
                                     <constraint firstItem="9oY-dZ-dy0" firstAttribute="centerY" secondItem="ABW-xI-Ru6" secondAttribute="centerY" id="sfg-nl-7SU"/>
                                     <constraint firstItem="Gbo-zw-1px" firstAttribute="leading" secondItem="bhQ-yW-boK" secondAttribute="leading" id="tb6-lt-7II"/>
                                     <constraint firstItem="ga7-yA-xLj" firstAttribute="centerY" secondItem="82J-nh-fLa" secondAttribute="centerY" id="twt-nm-POM"/>
@@ -306,6 +325,8 @@
                     <connections>
                         <outlet property="endTimeLabel" destination="Agp-V6-T5z" id="bvC-1l-tAC"/>
                         <outlet property="meaningfulnessLabel" destination="9oS-0X-tCT" id="hbg-Hj-wiW"/>
+                        <outlet property="myCurrentMoodImageView" destination="lET-zc-Bnk" id="buZ-yf-LN3"/>
+                        <outlet property="myCurrentMoodLabel" destination="GbH-sm-3PD" id="8Bi-yY-Ilw"/>
                         <outlet property="productivityLabel" destination="9oY-dZ-dy0" id="7Ib-Kv-P00"/>
                         <outlet property="startTimeLabel" destination="n9h-Ob-JXw" id="Ouc-fs-Ri6"/>
                     </connections>

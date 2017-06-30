@@ -18,6 +18,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var unfilledFeedback: UILabel!
 
+    @IBOutlet weak var modeImageView: UIImageView!
+    @IBOutlet weak var modeLabel: UILabel!
+    
     let possibleStatus = ["stop",
                           "pause",
                           "conceptual deep work",

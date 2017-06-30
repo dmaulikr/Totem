@@ -15,23 +15,45 @@ class FeedbackViewController: UIViewController {
     var databaseRef: DatabaseReference!
     var feedbackModel: FeedbackModel?
 
+    let possibleStatus = ["stop",
+                          "pause",
+                          "conceptual deep work",
+                          "tangible deep work",
+                          "getting shit done",
+                          "inspiration mode"]
+
     @IBOutlet weak var productivityLabel: UILabel!
     @IBOutlet weak var meaningfulnessLabel: UILabel!
 
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
-
+    
+    @IBOutlet weak var myCurrentMoodImageView: UIImageView!
+    @IBOutlet weak var myCurrentMoodLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupFeedbackTime()
 
         databaseRef = Database.database().reference()
+
+        DispatchQueue.main.async() { [weak self] in
+            let feedbackStatus = self?.feedbackModel!.feedbackStatus!
+            let profileStatus = self!.possibleStatus[feedbackStatus!]
+
+            self!.setupMyMood(withProfileStatus: ProfileStatus(rawValue: profileStatus)!)
+        }
     }
 
     private func setupFeedbackTime() {
         startTimeLabel.text = feedbackModel?.startTime
         endTimeLabel.text = feedbackModel?.endTime
+    }
+
+    private func setupMyMood(withProfileStatus profileStatus: ProfileStatus) {
+        myCurrentMoodImageView.image = profileStatus.statusImage()
+        myCurrentMoodLabel.text = profileStatus.rawValue
     }
 
 
