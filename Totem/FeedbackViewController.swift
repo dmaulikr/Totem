@@ -73,5 +73,7 @@ class FeedbackViewController: UIViewController {
 
     @IBAction func sendData() {
 
+        
+        self.navigationController?.popViewController(animated: true)
     }
 }
