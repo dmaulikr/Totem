@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
 
     private func fetchMyMood() {
-        refHandle = databaseRef.observe(.value, with: { snapshot in
+        refHandle = databaseRef.child("user-status").observe(.value, with: { snapshot in
             print(snapshot)
             if snapshot.exists() {
                 print("*********** working ***********")
