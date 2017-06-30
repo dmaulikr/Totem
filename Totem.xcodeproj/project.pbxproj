@@ -15,6 +15,8 @@
 		B9A705541F064E0E002D7B65 /* TotemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A705531F064E0E002D7B65 /* TotemTests.swift */; };
 		B9A7055F1F06598E002D7B65 /* ProfileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */; };
 		B9A705631F066BE5002D7B65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9A705621F066BE5002D7B65 /* GoogleService-Info.plist */; };
+		B9A705651F069156002D7B65 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A705641F069156002D7B65 /* FeedbackViewController.swift */; };
+		B9A705671F0696A4002D7B65 /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A705661F0696A4002D7B65 /* FeedbackModel.swift */; };
 		EC26235C6D59EFB613F7E462 /* libPods-Totem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6CEBA1DEAF6FC364FEC61C /* libPods-Totem.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		B9A705551F064E0E002D7B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStatus.swift; sourceTree = "<group>"; };
 		B9A705621F066BE5002D7B65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9A705641F069156002D7B65 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		B9A705661F0696A4002D7B65 /* FeedbackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
 		E00178F33D0AEE1EAAD588FC /* Pods-Totem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Totem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Totem/Pods-Totem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */,
+				B9A705661F0696A4002D7B65 /* FeedbackModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				B9A705401F064E0E002D7B65 /* ViewController.swift */,
+				B9A705641F069156002D7B65 /* FeedbackViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -299,9 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9A705671F0696A4002D7B65 /* FeedbackModel.swift in Sources */,
 				B9A705411F064E0E002D7B65 /* ViewController.swift in Sources */,
 				B9A7055F1F06598E002D7B65 /* ProfileStatus.swift in Sources */,
 				B9A7053F1F064E0E002D7B65 /* AppDelegate.swift in Sources */,
+				B9A705651F069156002D7B65 /* FeedbackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

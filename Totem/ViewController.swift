@@ -16,17 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var myCurrentMoodImageView: UIImageView!
     @IBOutlet weak var myCurrentMoodLabel: UILabel!
 
-    let possibleStatus = ["pause",
-                          "stop",
+    let possibleStatus = ["stop",
+                          "pause",
                           "conceptual deep work",
                           "tangible deep work",
                           "getting shit done",
                           "inspiration mode"]
 
     var databaseRef: DatabaseReference!
-    var refHandle: UInt = 0
+    var modeRefHandle: UInt = 0
+    var feedbackRefHandle: UInt = 1
 
     var statusModeIndex = 0
+    var unfilledModes = [FeedbackModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,14 @@ class ViewController: UIViewController {
 
         databaseRef = Database.database().reference()
 
-        fetchMyMood()
+        fetchMyWorkMode()
+        fetchUnfilledModes()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let feedbackViewController = segue.destination as? FeedbackViewController {
+            feedbackViewController.feedbackModel = self.unfilledModes.last
+        }
     }
 
     private func setupMyProfile() {
@@ -46,8 +55,8 @@ class ViewController: UIViewController {
         profileImageView.clipsToBounds = true
     }
 
-    private func fetchMyMood() {
-        refHandle = databaseRef.child("user-status/0").observe(.childAdded, with: { snapshot in
+    private func fetchMyWorkMode() {
+        modeRefHandle = databaseRef.child("user-status/0").observe(.childAdded, with: { snapshot in
             print(snapshot)
             if snapshot.exists() {
                 guard let modeIndex = snapshot.childSnapshot(forPath: "status").value as? Int else {
@@ -60,6 +69,25 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async() { [weak self] in
                         self!.setupMyMood(withProfileStatus: ProfileStatus(rawValue: self!.possibleStatus[modeIndex])!)
                     }
+                }
+            }
+        })
+    }
+
+    private func fetchUnfilledModes() {
+        modeRefHandle = databaseRef.child("user-tasks/0").observe(.childAdded, with: { snapshot in
+            print(snapshot)
+            if snapshot.exists() {
+
+                guard let meaningfulness = snapshot.childSnapshot(forPath: "meaningfulness").value as? Int,
+                let productivity = snapshot.childSnapshot(forPath: "productivity").value as? Int else {
+                    return
+                }
+
+                if meaningfulness == 0 && productivity == 0 {
+                    let feedbackModel = FeedbackModel(withDataSnapshot: snapshot)
+
+                    self.unfilledModes.append(feedbackModel)
                 }
             }
         })

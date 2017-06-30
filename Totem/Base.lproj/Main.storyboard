@@ -57,6 +57,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esb-cy-m1B">
+                                        <rect key="frame" x="269" y="388" width="90" height="30"/>
+                                        <state key="normal" title="Fill Feedback"/>
+                                        <connections>
+                                            <segue destination="usU-be-Mt2" kind="show" id="lLa-hL-ZRy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -64,8 +71,10 @@
                                     <constraint firstItem="0Ct-Jf-bE6" firstAttribute="centerX" secondItem="pFj-0O-7MM" secondAttribute="centerX" id="OdV-SG-ZyL"/>
                                     <constraint firstItem="0Ct-Jf-bE6" firstAttribute="top" secondItem="7su-65-cWv" secondAttribute="bottom" constant="16" id="Qkx-B0-fDU"/>
                                     <constraint firstItem="7su-65-cWv" firstAttribute="top" secondItem="pFj-0O-7MM" secondAttribute="top" constant="16" id="bgc-lV-dz7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Esb-cy-m1B" secondAttribute="trailing" constant="16" id="c1O-73-LOH"/>
                                     <constraint firstItem="vGG-HW-Oav" firstAttribute="top" secondItem="0Ct-Jf-bE6" secondAttribute="bottom" constant="16" id="eBa-6s-Pzs"/>
                                     <constraint firstItem="7su-65-cWv" firstAttribute="leading" secondItem="pFj-0O-7MM" secondAttribute="leading" constant="23" id="fJJ-Dz-JtC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Esb-cy-m1B" secondAttribute="bottom" constant="16" id="sur-OH-JV1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -92,6 +101,24 @@
             </objects>
             <point key="canvasLocation" x="-332" y="180.35982008995504"/>
         </scene>
+        <!--Feedback View Controller-->
+        <scene sceneID="0J1-aA-w2l">
+            <objects>
+                <viewController storyboardIdentifier="FeedbackViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="usU-be-Mt2" customClass="FeedbackViewController" customModule="Totem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JiP-WB-ApW"/>
+                        <viewControllerLayoutGuide type="bottom" id="0wB-yD-oUj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pb1-vc-jmV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rtx-BZ-cfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="181"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zio-iv-Ym9">
             <objects>
@@ -111,6 +138,6 @@
     </scenes>
     <resources>
         <image name="MyProfile" width="838" height="838"/>
-        <image name="status1" width="450" height="360"/>
+        <image name="status1" width="64" height="64"/>
     </resources>
 </document>

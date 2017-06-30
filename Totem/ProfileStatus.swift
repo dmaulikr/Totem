@@ -11,8 +11,8 @@ import UIKit
 
 enum ProfileStatus: String {
 
-    case status1 = "pause"
-    case status2 = "stop"
+    case status1 = "stop"
+    case status2 = "pause"
     case status3 = "conceptual deep work"
     case status4 = "tangible deep work"
     case status5 = "getting shit done"
@@ -40,8 +40,8 @@ enum ProfileStatus: String {
 
     static func randomStatusImage() -> ProfileStatus {
 
-        let possibleStatus = ["pause",
-                              "stop",
+        let possibleStatus = ["stop",
+                              "pause",
                               "conceptual deep work",
                               "tangible deep work",
                               "getting shit done",
