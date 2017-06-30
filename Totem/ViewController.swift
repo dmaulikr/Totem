@@ -16,8 +16,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var myCurrentMoodImageView: UIImageView!
     @IBOutlet weak var myCurrentMoodLabel: UILabel!
 
+    let possibleStatus = ["Conceptual Deep Work",
+                          "Work Through Others",
+                          "Tangible Deep Work",
+                          "Getting Stuff Done",
+                          "PAUSE",
+                          "START"]
+
     var databaseRef: DatabaseReference!
     var refHandle: UInt = 0
+
+    var statusModeIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +47,22 @@ class ViewController: UIViewController {
     }
 
     private func fetchMyMood() {
-        refHandle = databaseRef.child("user-status/0").observe(.value, with: { snapshot in
+        refHandle = databaseRef.child("user-status/0").observe(.childAdded, with: { snapshot in
             print(snapshot)
             if snapshot.exists() {
-                print("*********** working ***********")
+                guard let modeIndex = snapshot.childSnapshot(forPath: "status").value as? Int else {
+                    return
+                }
+
+                if self.statusModeIndex != modeIndex {
+                    self.statusModeIndex = modeIndex
+
+                    DispatchQueue.main.async { [weak self] in
+                        self!.setupMyMood(withProfileStatus: ProfileStatus(rawValue: self!.possibleStatus[modeIndex])!)
+                    }
+                }
             }
         })
-
-        setupMyMood(withProfileStatus: ProfileStatus(rawValue: "Conceptual Deep Work")!)
     }
 
     private func setupMyMood(withProfileStatus profileStatus: ProfileStatus) {
