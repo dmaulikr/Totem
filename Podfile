@@ -1,3 +1,3 @@
 target ’Totem’ do
-  pod 'Firebase'
+  pod 'Firebase/Core’
 end
