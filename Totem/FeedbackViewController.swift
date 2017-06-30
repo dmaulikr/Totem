@@ -8,9 +8,11 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class FeedbackViewController: UIViewController {
 
+    var databaseRef: DatabaseReference!
     var feedbackModel: FeedbackModel?
 
     @IBOutlet weak var productivityLabel: UILabel!
@@ -23,6 +25,8 @@ class FeedbackViewController: UIViewController {
         super.viewDidLoad()
 
         setupFeedbackTime()
+
+        databaseRef = Database.database().reference()
     }
 
     private func setupFeedbackTime() {
@@ -72,8 +76,11 @@ class FeedbackViewController: UIViewController {
     }
 
     @IBAction func sendData() {
+        let feedbackId = feedbackModel!.feedbackId!
 
-        
+        databaseRef.child("user-tasks/0/\(feedbackId)/meaningfulness").setValue(Int(meaningfulnessLabel.text!))
+        databaseRef.child("user-tasks/0/\(feedbackId)/productivity").setValue(Int(productivityLabel.text!))
+
         self.navigationController?.popViewController(animated: true)
     }
 }

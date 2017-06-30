@@ -64,12 +64,28 @@
                                             <segue destination="usU-be-Mt2" kind="show" id="lLa-hL-ZRy"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unfilled Modes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-XX-fIS">
+                                        <rect key="frame" x="244" y="351" width="115" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDZ-tq-VG7">
+                                        <rect key="frame" x="226.5" y="351" width="10.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="BV4-XX-fIS" firstAttribute="trailing" secondItem="Esb-cy-m1B" secondAttribute="trailing" id="0pZ-P9-RuQ"/>
+                                    <constraint firstItem="ZDZ-tq-VG7" firstAttribute="centerY" secondItem="BV4-XX-fIS" secondAttribute="centerY" id="18c-za-Efw"/>
                                     <constraint firstItem="vGG-HW-Oav" firstAttribute="centerX" secondItem="0Ct-Jf-bE6" secondAttribute="centerX" id="CnJ-2g-7cO"/>
+                                    <constraint firstItem="BV4-XX-fIS" firstAttribute="leading" secondItem="ZDZ-tq-VG7" secondAttribute="trailing" constant="7" id="Jvg-TD-awx"/>
                                     <constraint firstItem="0Ct-Jf-bE6" firstAttribute="centerX" secondItem="pFj-0O-7MM" secondAttribute="centerX" id="OdV-SG-ZyL"/>
                                     <constraint firstItem="0Ct-Jf-bE6" firstAttribute="top" secondItem="7su-65-cWv" secondAttribute="bottom" constant="16" id="Qkx-B0-fDU"/>
+                                    <constraint firstItem="Esb-cy-m1B" firstAttribute="top" secondItem="BV4-XX-fIS" secondAttribute="bottom" constant="16" id="Sqr-h0-uIW"/>
                                     <constraint firstItem="7su-65-cWv" firstAttribute="top" secondItem="pFj-0O-7MM" secondAttribute="top" constant="16" id="bgc-lV-dz7"/>
                                     <constraint firstAttribute="trailing" secondItem="Esb-cy-m1B" secondAttribute="trailing" constant="16" id="c1O-73-LOH"/>
                                     <constraint firstItem="vGG-HW-Oav" firstAttribute="top" secondItem="0Ct-Jf-bE6" secondAttribute="bottom" constant="16" id="eBa-6s-Pzs"/>
@@ -95,6 +111,7 @@
                         <outlet property="myCurrentMoodImageView" destination="0Ct-Jf-bE6" id="wks-r1-EEp"/>
                         <outlet property="myCurrentMoodLabel" destination="vGG-HW-Oav" id="mWJ-VH-WyS"/>
                         <outlet property="profileImageView" destination="yk2-ZT-rc4" id="HuW-Lm-tl4"/>
+                        <outlet property="unfilledFeedback" destination="ZDZ-tq-VG7" id="OeO-yr-7Gf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lpm-Dr-vIS" userLabel="First Responder" sceneMemberID="firstResponder"/>

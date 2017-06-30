@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var myCurrentMoodImageView: UIImageView!
     @IBOutlet weak var myCurrentMoodLabel: UILabel!
 
+    @IBOutlet weak var unfilledFeedback: UILabel!
+
     let possibleStatus = ["stop",
                           "pause",
                           "conceptual deep work",
@@ -44,6 +46,11 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let feedbackViewController = segue.destination as? FeedbackViewController {
             feedbackViewController.feedbackModel = self.unfilledModes.last
+
+            let totalUnfilledModes = self.unfilledModes.count - 1
+
+            self.unfilledModes.remove(at: totalUnfilledModes)
+            self.unfilledFeedback.text = String(totalUnfilledModes)
         }
     }
 
@@ -88,6 +95,8 @@ class ViewController: UIViewController {
                     let feedbackModel = FeedbackModel(withDataSnapshot: snapshot)
 
                     self.unfilledModes.append(feedbackModel)
+
+                    self.unfilledFeedback.text = String(self.unfilledModes.count)
                 }
             }
         })

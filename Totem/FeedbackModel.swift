@@ -19,8 +19,12 @@ import Firebase
 class FeedbackModel: NSObject {
     var startTime: String!
     var endTime: String!
+    var feedbackId: String!
+    var feedbackStatus: Int!
 
     init(withDataSnapshot dataSnapshot: DataSnapshot) {
+        self.feedbackId = dataSnapshot.key
+        self.feedbackStatus = dataSnapshot.childSnapshot(forPath: "status").value as! Int
         self.startTime = dataSnapshot.childSnapshot(forPath: "startTime").value as! String
         self.endTime = dataSnapshot.childSnapshot(forPath: "endTime").value as! String
     }
