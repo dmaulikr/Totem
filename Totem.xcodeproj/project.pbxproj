@@ -13,6 +13,7 @@
 		B9A705461F064E0E002D7B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9A705451F064E0E002D7B65 /* Assets.xcassets */; };
 		B9A705491F064E0E002D7B65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A705471F064E0E002D7B65 /* LaunchScreen.storyboard */; };
 		B9A705541F064E0E002D7B65 /* TotemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A705531F064E0E002D7B65 /* TotemTests.swift */; };
+		B9A7055F1F06598E002D7B65 /* ProfileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B9A7054F1F064E0E002D7B65 /* TotemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TotemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9A705531F064E0E002D7B65 /* TotemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotemTests.swift; sourceTree = "<group>"; };
 		B9A705551F064E0E002D7B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,9 @@
 		B9A7053D1F064E0E002D7B65 /* Totem */ = {
 			isa = PBXGroup;
 			children = (
+				B9A705611F065EC0002D7B65 /* ViewControllers */,
+				B9A705601F06599A002D7B65 /* Models */,
 				B9A7053E1F064E0E002D7B65 /* AppDelegate.swift */,
-				B9A705401F064E0E002D7B65 /* ViewController.swift */,
 				B9A705421F064E0E002D7B65 /* Main.storyboard */,
 				B9A705451F064E0E002D7B65 /* Assets.xcassets */,
 				B9A705471F064E0E002D7B65 /* LaunchScreen.storyboard */,
@@ -94,6 +97,22 @@
 				B9A705551F064E0E002D7B65 /* Info.plist */,
 			);
 			path = TotemTests;
+			sourceTree = "<group>";
+		};
+		B9A705601F06599A002D7B65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9A7055E1F06598E002D7B65 /* ProfileStatus.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B9A705611F065EC0002D7B65 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9A705401F064E0E002D7B65 /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9A705411F064E0E002D7B65 /* ViewController.swift in Sources */,
+				B9A7055F1F06598E002D7B65 /* ProfileStatus.swift in Sources */,
 				B9A7053F1F064E0E002D7B65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +434,7 @@
 				B9A7055A1F064E0E002D7B65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9A7055B1F064E0E002D7B65 /* Build configuration list for PBXNativeTarget "TotemTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +443,7 @@
 				B9A7055D1F064E0E002D7B65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

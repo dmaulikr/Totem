@@ -1,26 +1,104 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dhs-lB-xaf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Totem Profile-->
+        <scene sceneID="EQE-PT-G84">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cXq-oF-LM7" customClass="ViewController" customModule="Totem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="ncT-Qd-GPQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="jR8-qz-Ll2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="pmQ-WL-Y96">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="yk2-ZT-rc4">
+                                <rect key="frame" x="16" y="81" width="136" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="Ns4-gI-yAI"/>
+                                    <constraint firstAttribute="height" constant="136" id="Pkb-rK-DNz"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juliana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnY-ep-up7">
+                                <rect key="frame" x="169" y="139" width="54" height="19"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Current Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7su-65-cWv">
+                                <rect key="frame" x="16" y="268" width="131.5" height="19"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="status1" translatesAutoresizingMaskIntoConstraints="NO" id="0Ct-Jf-bE6">
+                                <rect key="frame" x="103.5" y="316" width="168" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="Ebz-wW-FCu"/>
+                                    <constraint firstAttribute="width" constant="168" id="FMq-C0-K3n"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAPPY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGG-HW-Oav">
+                                <rect key="frame" x="160" y="520" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Ct-Jf-bE6" firstAttribute="top" secondItem="7su-65-cWv" secondAttribute="bottom" constant="29" id="0eH-YD-pgP"/>
+                            <constraint firstItem="KnY-ep-up7" firstAttribute="centerY" secondItem="yk2-ZT-rc4" secondAttribute="centerY" id="84o-5J-O8f"/>
+                            <constraint firstItem="vGG-HW-Oav" firstAttribute="centerX" secondItem="0Ct-Jf-bE6" secondAttribute="centerX" id="Bc7-St-aUW"/>
+                            <constraint firstItem="0Ct-Jf-bE6" firstAttribute="centerX" secondItem="pmQ-WL-Y96" secondAttribute="centerX" id="Hg5-3y-4vU"/>
+                            <constraint firstItem="7su-65-cWv" firstAttribute="leading" secondItem="yk2-ZT-rc4" secondAttribute="leading" id="MEM-iu-pPq"/>
+                            <constraint firstItem="KnY-ep-up7" firstAttribute="leading" secondItem="yk2-ZT-rc4" secondAttribute="trailing" constant="17" id="XpQ-kD-l6z"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yk2-ZT-rc4" secondAttribute="leading" id="af8-9H-YFY"/>
+                            <constraint firstItem="vGG-HW-Oav" firstAttribute="top" secondItem="0Ct-Jf-bE6" secondAttribute="bottom" constant="16" id="ayq-HD-rns"/>
+                            <constraint firstItem="7su-65-cWv" firstAttribute="top" secondItem="yk2-ZT-rc4" secondAttribute="bottom" constant="51" id="v6y-fT-oKE"/>
+                            <constraint firstItem="yk2-ZT-rc4" firstAttribute="top" secondItem="ncT-Qd-GPQ" secondAttribute="bottom" constant="17" id="wJW-S3-lwu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Totem Profile" id="saI-01-kf9"/>
+                    <connections>
+                        <outlet property="myCurrentMoodImageView" destination="0Ct-Jf-bE6" id="wks-r1-EEp"/>
+                        <outlet property="myCurrentMoodLabel" destination="vGG-HW-Oav" id="mWJ-VH-WyS"/>
+                        <outlet property="profileImageView" destination="yk2-ZT-rc4" id="HuW-Lm-tl4"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpm-Dr-vIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-332" y="180.35982008995504"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zio-iv-Ym9">
+            <objects>
+                <navigationController id="dhs-lB-xaf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vxQ-9o-3g0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cXq-oF-LM7" kind="relationship" relationship="rootViewController" id="1fG-Mc-oUS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bw3-dd-XeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1116" y="182"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MyProfile" width="838" height="838"/>
+        <image name="status1" width="450" height="360"/>
+    </resources>
 </document>
