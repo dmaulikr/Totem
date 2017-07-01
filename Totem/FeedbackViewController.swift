@@ -15,13 +15,6 @@ class FeedbackViewController: UIViewController {
     var databaseRef: DatabaseReference!
     var feedbackModel: FeedbackModel?
 
-    let possibleStatus = ["stop",
-                          "pause",
-                          "conceptual deep work",
-                          "tangible deep work",
-                          "getting shit done",
-                          "inspiration mode"]
-
     @IBOutlet weak var productivityLabel: UILabel!
     @IBOutlet weak var meaningfulnessLabel: UILabel!
 
@@ -39,10 +32,9 @@ class FeedbackViewController: UIViewController {
         databaseRef = Database.database().reference()
 
         DispatchQueue.main.async() { [weak self] in
-            let feedbackStatus = self?.feedbackModel!.feedbackStatus!
-            let profileStatus = self!.possibleStatus[feedbackStatus!]
+            let feedbackStatus = self?.feedbackModel!.feedbackStatus
 
-            self!.setupMyMood(withProfileStatus: ProfileStatus(rawValue: profileStatus)!)
+            self!.setupMyMood(withStatusCode: feedbackStatus!)
         }
     }
 
@@ -51,9 +43,11 @@ class FeedbackViewController: UIViewController {
         endTimeLabel.text = feedbackModel?.endTime
     }
 
-    private func setupMyMood(withProfileStatus profileStatus: ProfileStatus) {
+    private func setupMyMood(withStatusCode statusCode: Int) {
+        let profileStatus = ProfileStatus(withStatusCode: statusCode)
+
         myCurrentMoodImageView.image = profileStatus.statusImage()
-        myCurrentMoodLabel.text = profileStatus.rawValue
+        myCurrentMoodLabel.text = profileStatus.statusText()
     }
 
 

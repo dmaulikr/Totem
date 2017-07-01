@@ -9,48 +9,26 @@
 import Foundation
 import UIKit
 
-enum ProfileStatus: String {
+class ProfileStatus: NSObject {
 
-    case status1 = "stop"
-    case status2 = "pause"
-    case status3 = "conceptual deep work"
-    case status4 = "tangible deep work"
-    case status5 = "getting shit done"
-    case status6 = "inspiration mode"
+    let possibleStatus = ["stop",
+                          "pause",
+                          "conceptual deep work",
+                          "tangible deep work",
+                          "getting shit done",
+                          "inspiration mode"]
 
-    func statusImage() -> UIImage {
+    var statusCode: Int
 
-        switch self {
-        case .status1:
-            return UIImage(named: "status1.png")!
-        case .status2:
-            return UIImage(named: "status2.png")!
-        case .status3:
-            return UIImage(named: "status3.png")!
-        case .status4:
-            return UIImage(named: "status4.png")!
-        case .status5:
-            return UIImage(named: "status5.png")!
-        case .status6:
-            return UIImage(named: "status6.png")!
-        default:
-            return UIImage(named: "status1.png")!
-        }
+    required init(withStatusCode statusCode: Int) {
+        self.statusCode = statusCode
     }
 
-    static func randomStatusImage() -> ProfileStatus {
-        let possibleStatus = ["stop",
-                              "pause",
-                              "conceptual deep work",
-                              "tangible deep work",
-                              "getting shit done",
-                              "inspiration mode"]
+    func statusImage() -> UIImage {
+        return UIImage(named: "status\(statusCode).png")!
+    }
 
-        let randomIndex = Int(arc4random_uniform(UInt32(possibleStatus.count)))
-        let statusValue = possibleStatus[randomIndex]
-
-        let status = ProfileStatus(rawValue: statusValue)
-        
-        return status!
+    func statusText() -> String {
+        return possibleStatus[statusCode]
     }
 }
